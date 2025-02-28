@@ -1,93 +1,98 @@
     # This is an example config file that can be used to initiate a hyperparameter sweep
     # using the Weights and Biases experiment tracking platform
     # See: https://docs.wandb.ai/guides/sweeps
-    project: "PROJECT NAME"
-    name: "EXPERIMENT NAME"
-    program: train.py
-    method: bayes
-    metric:
-      name: mean_reward
-      goal: maximize
-    parameters:
-      GAMMA:
-        min: 0.9
-        max: 0.99
-      GAE_LAMBDA:
-        min: 0.9
-        max: 0.99
-      NUM_STEPS:
-        values:
-          - 100
-          - 150
-          - 200
-          - 250
-          - 300
-      LR:
-        min: 0.00001
-        max: 0.0005
-      CLIP_EPS:
-        min: 0.15
-        max: 0.25
-      ENT_COEF:
-        min: 0.0
-        max: 0.001
-      NUM_LAYERS:
-        values:
-          - 2
-          - 3
-      NUM_UNITS:
-        values:
-          - 64
-          - 128
-          - 256
-    command:
-      - ${env}
-      - python3
-      - ${program}
-      - "--env_type"
-      - "vone"
-      - "--load"
-      - 200
-      - "--k"
+# This is an example config file that can be used to initiate a hyperparameter sweep
+# using the Weights and Biases experiment tracking platform
+# See: https://docs.wandb.ai/guides/sweeps
+project: "LetsGoDRL"
+name: "MULTIBANDRSA"
+program: train.py
+method: bayes
+metric:
+  name: service_blocking_probability
+  goal: minimize
+parameters:
+  GAMMA:
+    min: 0.85
+    max: 0.98
+  GAE_LAMBDA:
+    min: 0.8
+    max: 0.95
+  ROLLOUT_LENGTH:
+    values:
+      - 10
+      - 20
+      - 50
+  LR:
+    min: 5e-5
+    max: 5e-3
+  UPDATE_EPOCHS:
+    values:
       - 5
-      - "--topology_name"
-      - "nsfnet"
-      - "--link_resources"
-      - 320
-      - "--max_requests"
-      - 1e4
-      - "--max_timesteps"
-      - 3e4
-      - "--min_slots"
+      - 10
+      - 15
+  WARMUP_PEAK_MULTIPLIER:
+    values:
       - 2
-      - "--max_slots"
+      - 3
+  gnn_latent:
+    values:
+      - 128
+  gnn_mlp_layers:
+    values:
+      - 2
+      - 3
       - 4
-      - "--mean_service_holding_time"
+  message_passing_steps:
+    values:
+      - 3
+      - 4
+  SCHEDULE_MUTLIPLIER:
+    values:
+      - 5
       - 10
-      - "--node_resources"
-      - 160
-      - "--min_node_resources"
-      - 1
-      - "--max_node_resources"
-      - 2
-      - "--TOTAL_TIMESTEPS"
-      - 60000000
-      - "--UPDATE_EPOCHS"
+      - 15
+  NUM_ENVS:
+    values:
       - 10
-      - "--NUM_ENVS"
-      - 1000
-      - "--NUM_SEEDS"
-      - 1
-      - "--PROJECT"
-      - "PROJECT NAME"
-      - "--EXPERIMENT_NAME"
-      - "EXPERIMENT NAME"
-      - "--WANDB"
-      - "--NUM_DEVICES"
-      - 1
-      - "--DEFAULT_DEVICE"
-      - 2
-      - "--DOWNSAMPLE_FACTOR"
-      - 100
-      - "--consecutive_loading"
-      - ${args}
+      - 20
+      - 40
+  DOWNSAMPLE_FACTOR:
+    values:
+      - 10
+      - 20
+      - 50
+command:
+  - ${env}
+  - python3
+  - ${program}
+  - "--env_type"
+  - "multibandrsa"
+  - "--end_first_blocking"
+  - "--incremental_loading"
+  - "--load"
+  - 100
+  - "--k"
+  - 5
+  - "--topology_name"
+  - "nsfnet_deeprmsa_undirected"
+  - "--link_resources"
+  - 98
+  - "--values_bw"
+  - 400
+  - "--slot_size"
+  - 100
+  - "--interband_gap_start"
+  - 4800
+  - "--interband_gap_width"
+  - 200
+  - "--TOTAL_TIMESTEPS"
+  - 50000
+  - "--ENV_WARMUP_STEPS"
+  - 0
+  - "--ACTION_MASKING"
+  - "--PLOTTING"
+  - "--USE_GNN"
+  - "--LR_SCHEDULE"
+  - "warmup_cosine"
+  - ${args}
