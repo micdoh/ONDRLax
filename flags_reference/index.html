@@ -1,0 +1,885 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://micdoh.github.io/XLRON/flags_reference/">
+      
+      
+        <link rel="prev" href="../understanding_xlron/">
+      
+      
+        <link rel="next" href="../reference/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.7">
+    
+    
+      
+        <title>Command-line options - XLRON - Accelerated Learning and Resource Allocation for Optical Networks</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.8608ea7d.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/_mkdocstrings.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="yellow" data-md-color-accent="green">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#command-line-options" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="XLRON - Accelerated Learning and Resource Allocation for Optical Networks" class="md-header__button md-logo" aria-label="XLRON - Accelerated Learning and Resource Allocation for Optical Networks" data-md-component="logo">
+      
+  <img src="../images/xlron_nobackground.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            XLRON - Accelerated Learning and Resource Allocation for Optical Networks
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Command-line options
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="XLRON - Accelerated Learning and Resource Allocation for Optical Networks" class="md-nav__button md-logo" aria-label="XLRON - Accelerated Learning and Resource Allocation for Optical Networks" data-md-component="logo">
+      
+  <img src="../images/xlron_nobackground.png" alt="logo">
+
+    </a>
+    XLRON - Accelerated Learning and Resource Allocation for Optical Networks
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Getting Started
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Getting Started
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../installation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Installation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../quickstart/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Quick Start
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    User Guide
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            User Guide
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../understanding_xlron/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Understanding XLRON
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Command-line options
+    
+  </span>
+  
+
+      </a>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Function reference
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    About
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            About
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../license/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    License and Support
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../changelog/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Change Log
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="command-line-options">Command-line Options</h1>
+<div class="highlight"><pre><span></span><code>xlron.train.parameter_flags:
+  --[no]ACTION_MASKING: Use invalid action masking
+    (default: &#39;false&#39;)
+  --ACTIVATION: Activation function
+    (default: &#39;tanh&#39;)
+  --ADAM_BETA1: Adam beta1
+    (default: &#39;0.9&#39;)
+    (a number)
+  --ADAM_BETA2: Adam beta2
+    (default: &#39;0.999&#39;)
+    (a number)
+  --ADAM_EPS: Adam epsilon
+    (default: &#39;1e-05&#39;)
+    (a number)
+  --CLIP_EPS: PPO clipping parameter
+    (default: &#39;0.2&#39;)
+    (a number)
+  --DATA_OUTPUT_FILE: Path to save data output
+  --[no]DEBUG: Debug mode
+    (default: &#39;false&#39;)
+  --[no]DEBUG_NANS: Debug NaNs
+    (default: &#39;false&#39;)
+  --[no]DISABLE_JIT: Disable JIT compilation
+    (default: &#39;false&#39;)
+  --DOWNSAMPLE_FACTOR: Downsample factor to reduce data uploaded to wandb
+    (default: &#39;1&#39;)
+    (an integer)
+  --EMULATED_DEVICES: Number of devices to emulate
+    (an integer)
+  --[no]ENABLE_X64: Enable x64 floating point precision
+    (default: &#39;false&#39;)
+  --ENT_COEF: Entropy coefficient
+    (default: &#39;0.0&#39;)
+    (a number)
+  --ENV_WARMUP_STEPS: Number of warmup steps before training or eval
+    (default: &#39;0&#39;)
+    (an integer)
+  --[no]EVAL_HEURISTIC: Evaluate heuristic
+    (default: &#39;false&#39;)
+  --[no]EVAL_MODEL: Evaluate model
+    (default: &#39;false&#39;)
+  --EXPERIMENT_NAME: Name of experiment (equivalent to run name in wandb) (auto-generated based on other flags if unspecified)
+    (default: &#39;&#39;)
+  --GAE_LAMBDA: GAE lambda parameter
+    (default: &#39;0.95&#39;)
+    (a number)
+  --GAMMA: Discount factor
+    (default: &#39;0.999&#39;)
+    (a number)
+  --[no]LAYER_NORM: Use layer normalization
+    (default: &#39;false&#39;)
+  --[no]LOAD_MODEL: Load model for retraining or evaluation
+    (default: &#39;false&#39;)
+  --LR: Learning rate
+    (default: &#39;0.0005&#39;)
+    (a number)
+  --LR_SCHEDULE: Learning rate schedule
+    (default: &#39;warmup_cosine&#39;)
+  --MAX_GRAD_NORM: Maximum gradient norm
+    (default: &#39;0.5&#39;)
+    (a number)
+  --MINIBATCH_SIZE: Minibatch size
+    (default: &#39;1&#39;)
+    (an integer)
+  --MODEL_PATH: Path to save/load model
+  --[no]NO_PRINT_FLAGS: Do not print flags
+    (default: &#39;false&#39;)
+  --NUM_DEVICES: Number of devices
+    (default: &#39;1&#39;)
+    (an integer)
+  --NUM_ENVS: Number of environments per device
+    (default: &#39;1&#39;)
+    (an integer)
+  --NUM_LAYERS: Number of layers in actor and critic networks
+    (default: &#39;2&#39;)
+    (an integer)
+  --NUM_LEARNERS: Number of independent learners i.e. how many independent experiments to run with a unique set of learned parameters each
+    (default: &#39;1&#39;)
+    (an integer)
+  --NUM_MINIBATCHES: Number of minibatches per update
+    (default: &#39;1&#39;)
+    (an integer)
+  --NUM_UNITS: Number of hidden units in actor and critic networks
+    (default: &#39;64&#39;)
+    (an integer)
+  --NUM_UPDATES: Number of rollouts per environment
+    (default: &#39;1&#39;)
+    (an integer)
+  --[no]ORDERED: Order print statements when debugging (must be false if using pmap)
+    (default: &#39;true&#39;)
+  --[no]PLOTTING: Plotting
+    (default: &#39;false&#39;)
+  --[no]PREALLOCATE_MEM: Preallocate GPU memory
+    (default: &#39;true&#39;)
+  --PREALLOCATE_MEM_FRACTION: Fraction of GPU memory to preallocate
+    (default: &#39;0.95&#39;)
+  --[no]PRINT_MEMORY_USE: Print memory usage
+    (default: &#39;false&#39;)
+  --PROJECT: Name of project (same as experiment name if unspecified)
+    (default: &#39;&#39;)
+  --ROLLOUT_LENGTH: Number of steps per rollout per environment
+    (default: &#39;150&#39;)
+    (an integer)
+  --[no]SAVE_MODEL: Save model (will be saved to --MODEL_PATH locally and uploaded to wandb if --WANDB is True)
+    (default: &#39;false&#39;)
+  --SCHEDULE_MULTIPLIER: Increase the learning rate schedule horizon by this factor (to keep schedule for longer final training runs consistent with that from tuning runs)
+    (default: &#39;1&#39;)
+    (an integer)
+  --SEED: Random seed
+    (default: &#39;42&#39;)
+    (an integer)
+  --TOTAL_TIMESTEPS: Total number of timesteps
+    (default: &#39;1000000.0&#39;)
+    (a number)
+  --UPDATE_EPOCHS: Number of epochs per update
+    (default: &#39;10&#39;)
+    (an integer)
+  --[no]USE_GNN: Use GNN
+    (default: &#39;false&#39;)
+  --VF_COEF: Value function coefficient
+    (default: &#39;0.5&#39;)
+    (a number)
+  --VISIBLE_DEVICES: Comma-separated indices of (desired) visible GPUs e.g. 1,2,3
+    (default: &#39;0&#39;)
+  --[no]WANDB: Use wandb
+    (default: &#39;false&#39;)
+  --WARMUP_END_FRACTION: Fraction of init LR that is final LR
+    (default: &#39;0.1&#39;)
+    (a number)
+  --WARMUP_PEAK_MULTIPLIER: Increase the learning rate warmup peak compared to init
+    (default: &#39;1.0&#39;)
+    (a number)
+  --WARMUP_STEPS_FRACTION: Fraction of total timesteps to use for warmup
+    (default: &#39;0.2&#39;)
+    (a number)
+  --aggregate_slots: Number of slots to aggregate into a single action
+    (default: &#39;1&#39;)
+    (an integer)
+  --alpha: Fibre attenuation coefficient, alpha [dB/km]
+    (default: &#39;0.2&#39;)
+    (a number)
+  --amplifier_noise_figure: Amplifier noise figure [dB]
+    (default: &#39;4.5&#39;)
+    (a number)
+  --beta_2: Dispersion parameter [ps^2/km]
+    (default: &#39;-21.7&#39;)
+    (a number)
+  --[no]continuous_operation: If True, do not reset the environment at the end of an episode
+    (default: &#39;false&#39;)
+  --custom_traffic_matrix_csv_filepath: Path to custom traffic matrix CSV file
+  --[no]deterministic: Deterministic evaluation (use mode of action distribution)
+    (default: &#39;false&#39;)
+  --[no]disjoint_paths: Use disjoint paths (k paths still considered)
+    (default: &#39;false&#39;)
+  --[no]end_first_blocking: End episode on first blocking event
+    (default: &#39;false&#39;)
+  --env_type: Environment type
+    (default: &#39;vone&#39;)
+  --gamma: Nonlinear coefficient
+    (default: &#39;0.0012&#39;)
+    (a number)
+  --gnn_latent: GNN latent size
+    (default: &#39;64&#39;)
+    (an integer)
+  --gnn_mlp_layers: Number of MLP layers
+    (default: &#39;2&#39;)
+    (an integer)
+  --guardband: Guard band in slots
+    (default: &#39;1&#39;)
+    (an integer)
+  --[no]incremental_loading: Incremental increase in traffic load (non-expiring requests)
+    (default: &#39;false&#39;)
+  --k: Number of paths
+    (default: &#39;5&#39;)
+    (an integer)
+  --lambda0: Wavelength [nm]
+    (default: &#39;1550.0&#39;)
+    (a number)
+  --link_resources: Number of link resources
+    (default: &#39;5&#39;)
+    (an integer)
+  --load: Load
+    (default: &#39;250.0&#39;)
+    (a number)
+  --[no]log_actions: Log actions taken and other details
+    (default: &#39;false&#39;)
+  --max_bw: Maximum requested bandwidth
+    (default: &#39;100&#39;)
+    (an integer)
+  --max_node_resources: Maximum number of node resources
+    (default: &#39;1&#39;)
+    (an integer)
+  --max_requests: Maximum number of requests in an episode
+    (default: &#39;4.0&#39;)
+    (a number)
+  --max_timesteps: Maximum number of timesteps in an episode
+    (default: &#39;30.0&#39;)
+    (a number)
+  --max_traffic: Maximum traffic
+    (default: &#39;1.0&#39;)
+  --mean_service_holding_time: Mean service holding time
+    (default: &#39;25.0&#39;)
+    (a number)
+  --message_passing_steps: Number of message passing steps
+    (default: &#39;3&#39;)
+    (an integer)
+  --min_bw: Minimum requested bandwidth
+    (default: &#39;25&#39;)
+    (an integer)
+  --min_node_resources: Minimum number of node resources
+    (default: &#39;1&#39;)
+    (an integer)
+  --min_traffic: Minimum traffic
+    (default: &#39;0.0&#39;)
+  --model: Used to hold model parameters
+    (a comma separated list)
+  --modulations_csv_filepath: Modulation format definitions for RSA environment
+    (default: &#39;./examples/modulations.csv&#39;)
+  --multiple_topologies_directory: Directory containing JSON definitions of network topologies that will be alternated per episode
+  --node_heuristic: Node heuristic to be evaluated
+    (default: &#39;random&#39;)
+  --node_probs: List of node probabilities for selection
+    (a comma separated list)
+  --node_resources: Number of node resources
+    (default: &#39;4&#39;)
+    (an integer)
+  --[no]normalize_by_link_length: Normalize by link length
+    (default: &#39;false&#39;)
+  --output_edges_size: Output edges size (not used)
+    (default: &#39;64&#39;)
+    (an integer)
+  --output_globals_size: Output globals size
+    (default: &#39;64&#39;)
+    (an integer)
+  --output_nodes_size: Output nodes size
+    (default: &#39;64&#39;)
+    (an integer)
+  --path_heuristic: Path heuristic to be evaluated
+    (default: &#39;ksp_ff&#39;)
+  --[no]random_traffic: Random traffic matrix for RSA on each reset (else uniform or custom)
+    (default: &#39;false&#39;)
+  --reward_type: Reward type
+    (default: &#39;service&#39;)
+  --scale_factor: Scale factor for link capacity (only used in RWA with lightpath reuse)
+    (default: &#39;1.0&#39;)
+    (a number)
+  --slot_size: Spectral width of frequency slot in GHz
+    (default: &#39;12.5&#39;)
+    (a number)
+  --span_length: Span length [km]
+    (default: &#39;100.0&#39;)
+    (a number)
+  --step_bw: Step size for requested bandwidth values between min and max
+    (default: &#39;1&#39;)
+    (an integer)
+  --step_traffic: Step size for traffic values between min and max
+    (default: &#39;0.1&#39;)
+  --symbol_rate: Symbol rate [Gbaud]
+    (default: &#39;100.0&#39;)
+    (a number)
+  --topology_directory: Directory containing JSON definitions of network topologies
+  --topology_name: Topology name
+    (default: &#39;4node&#39;)
+  --traffic_requests_csv_filepath: Path to traffic request CSV file
+  --[no]truncate_holding_time: Truncate holding time to less than 2*mean_service_holding_time
+    (default: &#39;false&#39;)
+  --values_bw: List of requested bandwidth values
+    (a comma separated list)
+  --virtual_topologies: Virtual topologies
+    (default: &#39;3_ring&#39;)
+    (a comma separated list)
+  --weight: Edge attribute name for ordering k-shortest paths
+
+absl.flags:
+  --flagfile: Insert flag definitions from the given file into the command line.
+    (default: &#39;&#39;)
+  --undefok: comma-separated list of flag names that it is okay to specify on the command line even if the program does not define a flag with that name.  IMPORTANT: flags in this list that have arguments MUST use the --flag=value
+    format.
+    (default: &#39;&#39;)
+</code></pre></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["content.tabs.link", "search.suggest"], "search": "../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.c8b220af.min.js"></script>
+      
+    
+  </body>
+</html>

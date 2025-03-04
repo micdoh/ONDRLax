@@ -1,0 +1,93 @@
+    # This is an example config file that can be used to initiate a hyperparameter sweep
+    # using the Weights and Biases experiment tracking platform
+    # See: https://docs.wandb.ai/guides/sweeps
+    project: "PROJECT NAME"
+    name: "EXPERIMENT NAME"
+    program: train.py
+    method: bayes
+    metric:
+      name: mean_reward
+      goal: maximize
+    parameters:
+      GAMMA:
+        min: 0.9
+        max: 0.99
+      GAE_LAMBDA:
+        min: 0.9
+        max: 0.99
+      NUM_STEPS:
+        values:
+          - 100
+          - 150
+          - 200
+          - 250
+          - 300
+      LR:
+        min: 0.00001
+        max: 0.0005
+      CLIP_EPS:
+        min: 0.15
+        max: 0.25
+      ENT_COEF:
+        min: 0.0
+        max: 0.001
+      NUM_LAYERS:
+        values:
+          - 2
+          - 3
+      NUM_UNITS:
+        values:
+          - 64
+          - 128
+          - 256
+    command:
+      - ${env}
+      - python3
+      - ${program}
+      - "--env_type"
+      - "vone"
+      - "--load"
+      - 200
+      - "--k"
+      - 5
+      - "--topology_name"
+      - "nsfnet"
+      - "--link_resources"
+      - 320
+      - "--max_requests"
+      - 1e4
+      - "--max_timesteps"
+      - 3e4
+      - "--min_slots"
+      - 2
+      - "--max_slots"
+      - 4
+      - "--mean_service_holding_time"
+      - 10
+      - "--node_resources"
+      - 160
+      - "--min_node_resources"
+      - 1
+      - "--max_node_resources"
+      - 2
+      - "--TOTAL_TIMESTEPS"
+      - 60000000
+      - "--UPDATE_EPOCHS"
+      - 10
+      - "--NUM_ENVS"
+      - 1000
+      - "--NUM_SEEDS"
+      - 1
+      - "--PROJECT"
+      - "PROJECT NAME"
+      - "--EXPERIMENT_NAME"
+      - "EXPERIMENT NAME"
+      - "--WANDB"
+      - "--NUM_DEVICES"
+      - 1
+      - "--DEFAULT_DEVICE"
+      - 2
+      - "--DOWNSAMPLE_FACTOR"
+      - 100
+      - "--consecutive_loading"
+      - ${args}
